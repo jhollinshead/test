@@ -18,4 +18,19 @@ public class Grid {
     public void killCell(Cell cell) {
         cells.remove(cell);
     }
+
+    public boolean hasNeighbour(Cell cell) {
+        int numNeighbours = 0;
+        for(int i = 0; i < 3; ++i)
+            for(int j = 0; j < 3; ++j)
+                if(!(i == 1 && j == 1))
+                    if(this.isAlive(new Cell(cell.getX() -1 + i, cell.getY() - 1 + j)))
+                        numNeighbours++;
+
+        return numNeighbours > 0;
+    }
+
+    public boolean isAlive(Cell cell) {
+        return cells.contains(cell);
+    }
 }

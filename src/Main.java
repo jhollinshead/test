@@ -18,4 +18,14 @@ public class Main {
         Assert.assertEquals(grid.numberOfCells(), 0);
     }
 
+    @Test
+    public void cellHasNeighbour() {
+        Grid grid = new Grid();
+        grid.addCell(new Cell(1, 1));
+        grid.addCell(new Cell(1, 2));
+
+        Assert.assertTrue(grid.hasNeighbour(new Cell(1, 2)));
+    }
+
+
 }
