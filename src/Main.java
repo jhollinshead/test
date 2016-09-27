@@ -19,12 +19,25 @@ public class Main {
     }
 
     @Test
-    public void cellHasNeighbour() {
+    public void cellUnderPopulated() {
         Grid grid = new Grid();
         grid.addCell(new Cell(1, 1));
         grid.addCell(new Cell(1, 2));
 
-        Assert.assertTrue(grid.hasNeighbour(new Cell(1, 2)));
+        Assert.assertTrue(grid.isUnderpopulated(new Cell(1, 2)));
+    }
+
+    @Test
+    public void cellOverPopulated() {
+        Grid grid = new Grid();
+        grid.addCell(new Cell(1, 1));
+        grid.addCell(new Cell(1, 2));
+        grid.addCell(new Cell(2, 1));
+        grid.addCell(new Cell(2, 2));
+        grid.addCell(new Cell(1, 3));
+
+
+        Assert.assertTrue(grid.isOverpopulated(new Cell(1, 2)));
     }
 
 
