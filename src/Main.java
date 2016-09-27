@@ -1,6 +1,13 @@
+import org.junit.Assert;
+import org.junit.Test;
+
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    @Test
+    public void addSingleCell() {
+        Grid grid = new Grid();
+        grid.addCell(new Cell());
+        Assert.assertEquals(grid.numberOfCells(), 1);
     }
+
 }
