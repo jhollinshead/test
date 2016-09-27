@@ -40,4 +40,12 @@ public class Grid {
                         numNeighbours++;
         return numNeighbours;
     }
+
+    public boolean isStable(Cell cell) {
+        return getNumOfNeighbours(cell) == 2 || getNumOfNeighbours(cell) == 3;
+    }
+
+    public boolean cellWillReproduce(Cell cell) {
+        return getNumOfNeighbours(cell) == 3;
+    }
 }
