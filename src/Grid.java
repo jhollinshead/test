@@ -14,4 +14,8 @@ public class Grid {
         cells.add(cell);
 
     }
+
+    public void killCell(Cell cell) {
+        cells.remove(cell);
+    }
 }
